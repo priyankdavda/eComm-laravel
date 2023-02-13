@@ -34,5 +34,14 @@
         height: 500px;
         padding-top:100px; 
     }
+    img.silder-img{
+        height: 400px !important;
+    }
+    .custom-product{
+        height: 600px;
+    }
+    .slider-text{
+        background-color: #87ceeb73 !important;
+    }
 </style>
 </html>

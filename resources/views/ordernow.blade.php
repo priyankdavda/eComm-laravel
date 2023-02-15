@@ -30,14 +30,15 @@
                 </tbody>
             </table>
             <form action="/orderplace" method="post">
+                @csrf
                 <div class="form-group">
                     <textarea class="form-control" name="address" placeholder="Enter your address"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Payment Method</label>
-                    <p><input type="radio" name="payment"><span>Online Payment</span></p>
-                    <p><input type="radio" name="payment"><span>EMi Payment</span></p>
-                    <p><input type="radio" name="payment"><span>Payment On Delivery</span></p>
+                    <p><input type="radio" value="cash" name="payment_method"><span>Online Payment</span></p>
+                    <p><input type="radio" value="cash" name="payment_method"><span>EMi Payment</span></p>
+                    <p><input type="radio" value="cash" name="payment_method"><span>Payment On Delivery</span></p>
                 </div>
                 <button type="submit" class="btn btn-default">Order Now</button>
             </form>

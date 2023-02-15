@@ -90,12 +90,22 @@ class ProductController extends Controller
             $order->user_id=$cart['user_id'];
             $order->address=$req->address;
             $order->payment_method=$req->payment_method;
-            $order->status="Pendding";
-            $order->payment_status="Pendding";
+            $order->status="Pending";
+            $order->payment_status="Pending";
             $order->save();
         }
         Cart::where('user_id',$userId)->delete();
         return redirect('/');
         //return $req->input();
+    }
+
+    function myOrder()
+    {
+        $userId=Session::get('user')['id'];
+        $orders=DB::table('orders')
+        ->join('products','orders.product_id','products.id')
+        ->where('orders.user_id',$userId)
+        ->get();
+        return view('myorder',['orders'=>$orders]);
     }
 }

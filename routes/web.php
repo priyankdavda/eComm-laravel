@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 /*
@@ -34,3 +35,7 @@ Route::get('/search',[ProductController::class,'search']);
 //for add to cart
 Route::post('/add_to_cart',[ProductController::class,'addToCart']);
 
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('/login');
+});

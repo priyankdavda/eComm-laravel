@@ -29,9 +29,9 @@
                     </tr>
                 </tbody>
             </table>
-            <form action="">
+            <form action="/orderplace" method="post">
                 <div class="form-group">
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" name="address" placeholder="Enter your address"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Payment Method</label>
